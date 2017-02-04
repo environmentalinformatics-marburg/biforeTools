@@ -40,8 +40,8 @@ lapply(lib, function(...) require(..., character.only = TRUE))
 ## Set working directory
    if (Sys.info()['sysname'] == "Windows") {
       setwd(Sys.getenv("D:/")) 
-   else {  ## if sysname is Darwin (mac), Linux, Solaris etc
-      setwd(Sys.getenv("HOME")) ## returns /home/username as working directory 
+   else {  ## if SO is Darwin (mac), Linux, Solaris etc...
+      setwd(Sys.getenv("HOME")) ## set "/home/username" as working directory 
    }
 
 ### Set filepaths ##############################################################
