@@ -38,9 +38,11 @@ lib <- c("ggplot2", "ggmap", "RJSONIO")
 lapply(lib, function(...) require(..., character.only = TRUE))
 
 ## Set working directory
-# setwd("/home/sschlauss/")
-setwd("D:/")
-
+   if (Sys.info()['sysname'] == "Windows") {
+      setwd(Sys.getenv("D:/")) 
+   else {  ## if SO is Darwin (mac), Linux, Solaris etc...
+      setwd(Sys.getenv("HOME")) ## set "/home/username" as working directory 
+   }
 
 ### Set filepaths ##############################################################
 
